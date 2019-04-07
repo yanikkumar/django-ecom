@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- {% include 'base/navbar.html' with brand_name=brand %} -->  <!--this can also be done for navbar-->
+
+<!--Page Header-->
+
+<header id="page-header">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 m-auto text-center">
+      <h1 class="display-4">{{ title }}</h1>
+      <p class="lead">Contact Us We're Always There For Your Help</p>
+    </div>
+  </div>
+</div>
+</header>
+
+<!--form section-->
+<section id="contact" class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <div class="card-body">
+            <h4 class="dark">{{ content }}</h4>
+            <p class="lead">We're always there for you and will never let you down.You can send us mails at given address.</p>
+            <h4 class="text-dark">Address</h4>
+            <p class="text-muted">A-11/2A Shyam Vihar Phase-2 Najafgarh, New Delhi-110043</p>
+            <h4 class="text-dark">Email</h4>
+            <p class="text-muted">info@belivemaster.com</p>
+            <h4 class="text-dark">Phone</h4>
+            <p class="text-muted">(+91)-7982-122-750</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card p-4">
+
+          <form method="POST"> {% csrf_token %}
+          {{ form.as_p }}
+          <button type='submit' class="btn btn-outline-dark">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!--old contact form-->
+  <!-- <div class='text-center'>
+      <h2>{{ title }}</h2>
+      <h1>Hello, Yanik To world of python! Make A new Python web </h1>
+  </div>
+  <div class="container">
+    <div class="row">
+        <div class="col">
+        <p>{{ content }}</p>
+        <div class="col-sm-6 col-12">
+          <form method="POST"> {% csrf_token %}
+          {{ form.as_p }}
+          <button type='submit' class="btn btn-outline-dark">Submit</button>
+          </form>
+        </div>
+      <!--
+       <form method="POST"> % csrf_token %  Renders out necessary security related stuffs
+
+              <input type="text" name="fullname" placeholder="name" class="form-control">
+              <input type="emial" name="email" placeholder="email" class="form-control">
+              <textarea type='Submit' class='form-control' placeholder='your message</textarea>
+              <button type='submit' class="btn btn-default">Submit</button>
+
+        </form>  --
+
+      </div>
+    </div>
+  </div>
+</div> -->
+{% endblock %}
